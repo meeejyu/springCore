@@ -32,7 +32,7 @@ public class HelloTraceV1 {
 
     private void complete(TraceStatus status, Exception e) {
         Long stopTimeMs = System.currentTimeMillis();
-        long resultTimeMs = stopTimeMs = status.getStartTimeMs(); // 총시간
+        long resultTimeMs = stopTimeMs - status.getStartTimeMs(); // 총시간
         TraceId traceId = status.getTraceId();
         if(e == null) {
             log.info("[{}] {}{} time={}ms", traceId.getId(), addSpace(COMPLETE_PREFIX, traceId.getLevel()), 
