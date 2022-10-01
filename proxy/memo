@@ -39,3 +39,22 @@ public interface InvocationHandler {
     Object Proxy : 프록시 자신
     Method method : 호출한 메서드
     Object[] args : 메서드를 호출할 때 전달한 인수
+
+CGLIB 코드
+
+    public interface MethodInterceptor extends Callback {
+        Object intercept(Object obj, Method method, Object[] args, MethodProxy
+    proxy) throws Throwable;
+    }
+제공하는 파라미터
+obj : CGLIB가 적용된 객체
+method : 호출된 메서드
+args : 메서드를 호출하면서 전달된 인수 
+proxy : 메서드 호출에 사용
+
+CGLIB 제약
+    클래스 기반 프록시는 상속을 사용하기 때문에 몇가지 제약이 있다.
+    부모 클래스의 생성자를 체크해야 한다. CGLIB는 자식 클래스를 동적으로 생성하기 때문에 기본 생성자가 필요하다.
+    클래스에 final 키워드가 붙으면 상속이 불가능하다. CGLIB에서는 예외가 발생한다. 
+    메서드에 final 키워드가 붙으면 해당 메서드를 오버라이딩 할 수 없다. CGLIB에서는 프록시 로직이 동작하지 않는다.
+
