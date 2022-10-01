@@ -27,3 +27,15 @@ GOF 디자인 패턴
     클래스에 final 키워드가 붙으면 상속이 불가능하다
     메소드 final 키워드를 붙으면 해당 메소드를 오버라이딩 할 수 없다.
 
+JDK 동적 프록시가 제공하는 InvocationHandler
+
+public interface InvocationHandler {
+
+    public Object invoke(Object proxy, Meshto method, Object[] args) 
+        throws Throwable;
+}
+
+제공하는 파라미터 
+    Object Proxy : 프록시 자신
+    Method method : 호출한 메서드
+    Object[] args : 메서드를 호출할 때 전달한 인수
