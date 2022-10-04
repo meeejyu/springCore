@@ -11,8 +11,6 @@ import org.springframework.aop.aspectj.AspectJExpressionPointcut;
 import hello.aop.member.MemberServiceImpl;
 import lombok.extern.slf4j.Slf4j;
 
-
-
 @Slf4j
 public class ExecutionTest {
 
