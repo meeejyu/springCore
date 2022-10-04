@@ -8,8 +8,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.Import;
 
 @Slf4j
-// @Import(CallLogAspect.class)
-// @SpringBootTest
+@Import(CallLogAspect.class)
+@SpringBootTest
 class CallServiceV2Test {
 
     @Autowired

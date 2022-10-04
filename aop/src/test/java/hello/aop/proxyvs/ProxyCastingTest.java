@@ -44,4 +44,12 @@ public class ProxyCastingTest {
         // CGLIB 프록시를 구현 클래스로 캐스팅 시도 성공
         MemberServiceImpl castingMemberService = (MemberServiceImpl) memberServiceProxy;
     }
+
+    /*
+     * 여기에서 CGLIB Proxy를 대상 클래스인 MemberServiceImpl 타입으로 캐스팅하면 성공한다. 
+     * 왜냐하면 CGLIB는 구체 클래스를 기반으로 프록시를 생성하기 때문이다. 
+     * CGLIB Proxy는 MemberServiceImpl 구체 클래스를 기반으로 생성된 프록시이다. 
+     * 따라서 CGLIB Proxy는 MemberServiceImpl 은 물론이고, MemberServiceImpl 이 
+     * 구현한 인터페이스인 MemberService 로도 캐스팅 할 수 있다.
+     */
 }
